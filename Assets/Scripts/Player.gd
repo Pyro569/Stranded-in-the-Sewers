@@ -17,6 +17,11 @@ func _process(delta):
 	#print(position.y)
 	if position.y > 1000:
 		position.y = 0
+	if position.x < -700:
+		position.x = 1000
+	if position.x > 1000:
+		position.x = -700
+		
 
 func _physics_process(delta):
 	if RightDown:
