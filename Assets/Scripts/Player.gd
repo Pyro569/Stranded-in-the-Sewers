@@ -45,6 +45,11 @@ func _physics_process(delta):
 	move_and_slide(velocity, FLOOR)
 	if is_on_floor():
 		velocity.y = 0
+		
+func _on_BlockTrigger_area_entered(area):
+	print("Collided")
+	var BlockTrigger = get_node("root/Level/Node2D")
+	
 	
 	#print("X Velocity: " + String(velocity.x))
 	#print("Y Velocity: " + String(velocity.y))
