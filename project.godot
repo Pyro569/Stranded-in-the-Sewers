@@ -20,9 +20,19 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Untitled-Fireboy-and-Watergirl-Clone"
+config/name="Stranded In The Sewers"
+config/description="Red Cat and Blue Dog have fallen into the Detroit Sewers! You and a friend must help them escape! Solve puzzles and jump from platform to platform to escape!"
 run/main_scene="res://Game.tscn"
-config/icon="res://Assets/Images/Unused/icon.png"
+config/use_hidden_project_data_directory=false
+boot_splash/show_image=false
+boot_splash/image="res://Assets/Images/Unused/ohio.png"
+config/icon="res://Assets/Images/Unused/ohio.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
 
 [gui]
 

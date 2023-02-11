@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Images/Level/Cat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://Assets/Images/Level/Dog.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Level/Drain.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Images/Level/HopefullyTileableWater.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Level/Background.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/Level/LowerWater.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,8 +27,25 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 25, 25 )
 
+[sub_resource type="GDScript" id=10]
+script/source = "extends Area2D
+
+func _ready():
+	pass # Replace with function body.
+
+func _on_Area2D_body_entered(body):
+	print(\"Collided\")
+	#blockNode.set_process(false)
+"
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 25, 25 )
+
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 192, 0, 192, 192, 0, 192 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
@@ -48,6 +69,12 @@ points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -76,7 +103,7 @@ points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
 2/texture = ExtResource( 5 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 96, 96 )
+2/region = Rect2( -32, -64, 192, 256 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
@@ -86,9 +113,57 @@ points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
 2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
+3/name = "Background.png 3"
+3/texture = ExtResource( 8 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( -32, -32, 192, 160 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "HopefullyTileableWater.png 4"
+4/texture = ExtResource( 7 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 320, 96 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "LowerWater.png 5"
+5/texture = ExtResource( 9 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( -32, -32, 352, 160 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 383.5, 96 )
+extents = Vector2( 2111, 96 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 97, 575 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 1341.5, 94.5 )
 
 [node name="Game" type="Node"]
 
@@ -98,6 +173,7 @@ extents = Vector2( 383.5, 96 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Players/Cat"]
 position = Vector2( 288, 30 )
+z_index = 10
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Players/Cat/KinematicBody2D"]
@@ -110,15 +186,26 @@ animation = "walk"
 position = Vector2( 120, 108 )
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="Players/Cat/KinematicBody2D"]
+[node name="Area2D" type="Area2D" parent="Players/Cat/KinematicBody2D"]
 position = Vector2( 120, 108 )
+script = SubResource( 10 )
+
+[node name="Button Hitbox" type="CollisionShape2D" parent="Players/Cat/KinematicBody2D/Area2D"]
+shape = SubResource( 9 )
+
+[node name="Camera2D" type="Camera2D" parent="Players/Cat/KinematicBody2D"]
+position = Vector2( 118, -30 )
 current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players/Cat/KinematicBody2D"]
+stream = ExtResource( 10 )
 
 [node name="Dog" type="Node2D" parent="Players"]
 position = Vector2( 112, 26 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Players/Dog"]
 position = Vector2( 288, 30 )
+z_index = 10
 script = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Players/Dog/KinematicBody2D"]
@@ -131,19 +218,30 @@ animation = "up"
 position = Vector2( 120, 108 )
 shape = SubResource( 2 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players/Dog/KinematicBody2D"]
+stream = ExtResource( 10 )
+
+[node name="Level" type="Node2D" parent="."]
 position = Vector2( -51, 168 )
 
-[node name="TileMap" type="TileMap" parent="Node2D"]
+[node name="TileMap" type="TileMap" parent="Level"]
 position = Vector2( 438, 173 )
 tile_set = SubResource( 4 )
 format = 1
-tile_data = PoolIntArray( 131066, 0, 0, 131069, 0, 0, 65536, 0, 0, 65539, 0, 0 )
+tile_data = PoolIntArray( -1114133, 0, 0, -1114130, 0, 0, -1114127, 0, 0, -1114124, 0, 0, -1114121, 0, 0, -1114118, 0, 0, -1114115, 0, 0, -1179648, 0, 0, -1179645, 0, 0, -1179642, 0, 0, -1179639, 0, 0, -1179636, 0, 0, -1179633, 0, 0, -1179630, 0, 0, -1179622, 1, 0, -1048600, 0, 0, -917525, 3, 0, -917522, 3, 0, -917519, 3, 0, -917517, 3, 0, -917514, 3, 0, -917511, 3, 0, -917508, 3, 0, -917505, 3, 0, -983038, 3, 0, -983035, 3, 0, -983032, 3, 0, -983029, 3, 0, -983026, 3, 0, -983023, 3, 0, -983020, 0, 0, -983014, 1, 0, -851992, 0, 0, -786453, 3, 0, -786450, 3, 0, -786447, 3, 0, -786445, 3, 0, -786442, 3, 0, -786439, 3, 0, -786436, 3, 0, -786433, 3, 0, -851966, 3, 0, -851963, 3, 0, -851960, 3, 0, -851957, 3, 0, -851954, 3, 0, -851951, 3, 0, -786412, 0, 0, -786406, 1, 0, -655384, 0, 0, -655381, 3, 0, -655378, 3, 0, -655375, 3, 0, -655373, 3, 0, -655370, 3, 0, -655367, 3, 0, -655364, 3, 0, -655361, 3, 0, -720894, 3, 0, -720891, 3, 0, -720888, 3, 0, -720885, 3, 0, -720882, 3, 0, -720879, 3, 0, -524309, 3, 0, -524306, 3, 0, -524303, 3, 0, -524301, 3, 0, -524298, 3, 0, -524295, 3, 0, -524292, 3, 0, -524289, 3, 0, -589822, 3, 0, -589819, 3, 0, -589816, 3, 0, -589813, 3, 0, -589810, 3, 0, -589807, 3, 0, -589804, 1, 0, -589798, 1, 0, -458776, 0, 0, -393237, 3, 0, -393234, 3, 0, -393231, 3, 0, -393229, 3, 0, -393226, 3, 0, -393223, 3, 0, -393220, 3, 0, -393217, 3, 0, -458750, 3, 0, -458747, 3, 0, -458744, 3, 0, -458741, 3, 0, -458738, 3, 0, -458735, 3, 0, -393196, 1, 0, -393193, 1, 0, -393190, 1, 0, -262168, 0, 0, -262165, 3, 0, -262162, 3, 0, -262159, 3, 0, -262157, 3, 0, -262154, 2, 0, -262151, 2, 0, -262148, 2, 0, -262145, 2, 0, -327678, 2, 0, -327675, 2, 0, -327672, 2, 0, -327669, 2, 0, -327666, 2, 0, -327663, 3, 0, -131093, 3, 0, -131090, 3, 0, -131087, 3, 0, -131085, 3, 0, -196591, 3, 0, -65560, 1, 0, -21, 3, 0, -18, 3, 0, -15, 3, 0, -13, 3, 0, -10, 3, 0, -7, 3, 0, -4, 3, 0, -1, 3, 0, -65534, 3, 0, -65531, 3, 0, -65528, 3, 0, -65525, 3, 0, -65522, 3, 0, -65519, 3, 0, 131048, 1, 0, 131051, 1, 0, 131054, 1, 0, 131057, 1, 0, 131060, 1, 0, 131063, 1, 0, 131066, 0, 0, 131069, 0, 0, 65536, 0, 0, 65539, 0, 0, 65542, 1, 0, 65545, 1, 0, 65548, 1, 0, 65551, 1, 0, 65554, 1, 0, 65557, 1, 0, 65560, 1, 0, 65563, 1, 0, 65566, 1, 0, 65569, 1, 0, 65572, 1, 0, 65575, 1, 0, 196573, 4, 0, 196578, 4, 0, 196583, 4, 0, 196588, 4, 0, 196593, 4, 0, 196598, 4, 0, 196603, 4, 0, 131072, 4, 0, 131077, 4, 0, 131082, 4, 0, 131087, 4, 0, 131090, 4, 0, 131095, 4, 0, 131100, 4, 0, 131105, 4, 0, 131110, 4, 0, 262109, 5, 0, 262113, 5, 0, 262118, 5, 0, 262119, 5, 0, 262124, 5, 0, 262129, 5, 0, 262134, 5, 0, 262139, 5, 0, 196608, 5, 0, 196613, 5, 0, 196618, 5, 0, 196623, 5, 0, 196626, 5, 0, 196631, 5, 0, 196632, 5, 0, 196637, 5, 0, 196638, 5, 0, 196641, 5, 0, 196643, 5, 0, 196646, 5, 0, 327660, 5, 0, 327665, 5, 0, 327670, 5, 0, 327675, 5, 0, 262144, 5, 0, 262162, 5, 0, 393181, 5, 0, 393186, 5, 0, 393191, 5, 0, 327685, 5, 0, 327690, 5, 0, 327695, 5, 0, 327703, 5, 0, 327708, 5, 0, 327713, 5, 0, 327718, 5, 0, 458717, 5, 0, 458722, 5, 0, 458727, 5, 0, 458732, 5, 0, 458737, 5, 0, 458742, 5, 0, 458747, 5, 0, 393216, 5, 0, 393221, 5, 0, 393226, 5, 0, 393231, 5, 0, 393234, 5, 0, 393239, 5, 0, 393244, 5, 0, 393249, 5, 0, 393254, 5, 0 )
 
-[node name="Area2D" type="Area2D" parent="Node2D/TileMap"]
+[node name="Area2D" type="Area2D" parent="Level/TileMap"]
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TileMap/Area2D"]
-position = Vector2( -0.5, 160 )
+[node name="GroundBorders" type="CollisionShape2D" parent="Level/TileMap/Area2D"]
+position = Vector2( 578, 160 )
 shape = SubResource( 7 )
+
+[node name="LeftBorder" type="CollisionShape2D" parent="Level/TileMap/Area2D"]
+position = Vector2( -1439, -512 )
+shape = SubResource( 12 )
+
+[node name="TopBorder" type="CollisionShape2D" parent="Level/TileMap/Area2D"]
+position = Vector2( -1.5, -1054.5 )
+shape = SubResource( 13 )

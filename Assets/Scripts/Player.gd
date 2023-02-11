@@ -13,13 +13,15 @@ var RightDown = false
 var LeftDown = false
 var UpDown = false
 
+var jumpSound = preload("res://Assets/Sounds/jump.wav")
+
 func _process(delta):
 	#print(position.y)
-	if position.y > 1000:
+	if position.y > 10000:
 		position.y = 0
-	if position.x < -700:
+	if position.x < -10000:
 		position.x = 1000
-	if position.x > 1000:
+	if position.x > 10000:
 		position.x = -700
 		
 
@@ -34,6 +36,8 @@ func _physics_process(delta):
 	if UpDown:
 		if is_on_floor():
 			velocity.y = - JUMPSPEED
+			$AudioStreamPlayer2D.stream = jumpSound
+			$AudioStreamPlayer2D.play()
 			
 	
 	velocity.y += GRAVITY
