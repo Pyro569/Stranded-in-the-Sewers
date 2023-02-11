@@ -29,3 +29,6 @@ func _physics_process(delta):
 	velocity.y += GRAVITY
 		
 	move_and_slide(velocity, FLOOR)
+	
+	print("X Velocity: " + String(velocity.x))
+	print("Y Velocity: " + String(velocity.y))
