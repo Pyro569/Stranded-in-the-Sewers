@@ -25,6 +25,9 @@ func _process(delta): #function _process is called every frame
 	else:
 		$AnimatedSprite.stop()
 		
+	if velocity.y > -9.8:
+		velocity.y -= 0.1 #gravity???
+
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
