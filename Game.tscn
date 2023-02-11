@@ -293,10 +293,6 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	print(\"Collided\")
 	#blockNode.set_process(false)
-
-
-func _on_BlockTrigger_area_entered(area):
-	pass # Replace with function body.
 "
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -343,11 +339,13 @@ position = Vector2( 406, 0 )
 current = true
 script = ExtResource( 15 )
 
-[node name="Button" type="Button" parent="Camera/Camera2D"]
-margin_left = -54.0
-margin_top = -56.0
-margin_right = 58.0
-margin_bottom = 50.0
+[node name="Node2D" type="Node2D" parent="Camera/Camera2D"]
+position = Vector2( -310, -56 )
+z_index = 20
+
+[node name="Button" type="Button" parent="Camera/Camera2D/Node2D"]
+margin_right = 112.0
+margin_bottom = 106.0
 text = "Quit Game"
 icon = ExtResource( 11 )
 icon_align = 1
