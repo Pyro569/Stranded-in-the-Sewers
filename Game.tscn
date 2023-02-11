@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Images/Level/Cat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Images/Player/RedSquare.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Scripts/BlockTrigger.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -268,6 +269,9 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 } ]
 3/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 421, 137.5 )
+
 [node name="Game" type="Node"]
 
 [node name="Players" type="Node" parent="."]
@@ -342,4 +346,20 @@ tile_data = PoolIntArray( -2162674, 0, 0, -2162671, 0, 0, -2162668, 0, 0, -21626
 position = Vector2( 438, 173 )
 tile_set = SubResource( 16 )
 format = 1
-tile_data = PoolIntArray( -851939, 3, 0, -655321, 3, 0, -458715, 3, 0, -262109, 3, 0, -65496, 3, 0 )
+tile_data = PoolIntArray( -851939, 3, 0, -655321, 3, 0, -262109, 3, 0, -65496, 3, 0 )
+
+[node name="BlockNode" type="Node2D" parent="Level"]
+script = ExtResource( 14 )
+
+[node name="BlockTrigger" type="Area2D" parent="Level/BlockNode"]
+position = Vector2( 3662, -651 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/BlockNode/BlockTrigger"]
+position = Vector2( 7, -3.5 )
+shape = SubResource( 21 )
+
+[node name="RedSquare" type="Sprite" parent="Level/BlockNode/BlockTrigger"]
+position = Vector2( -147, -3 )
+texture = ExtResource( 11 )
+
+[connection signal="area_entered" from="Level/BlockNode/BlockTrigger" to="Players/Cat/KinematicBody2D" method="_on_BlockTrigger_area_entered"]
