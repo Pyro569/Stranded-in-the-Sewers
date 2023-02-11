@@ -1,3 +1,4 @@
+class_name Dog
 extends Player
 
 func _process(delta):
