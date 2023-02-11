@@ -12,9 +12,9 @@
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Images/Player/RedSquare.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=12]
-[ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Scripts/BlockTrigger.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -243,7 +243,7 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 } ]
 2/z_index = 0
 3/name = "MossyBlock.png 3"
-3/texture = ExtResource( 15 )
+3/texture = ExtResource( 13 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 128, 128 )
@@ -280,7 +280,7 @@ extents = Vector2( 421, 137.5 )
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 position = Vector2( 406, 0 )
 current = true
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
 [node name="Players" type="Node" parent="."]
 
@@ -347,6 +347,7 @@ format = 1
 tile_data = PoolIntArray( -851939, 3, 0, -655321, 3, 0, -262109, 3, 0, -65496, 3, 0 )
 
 [node name="BlockNode" type="Node2D" parent="Level"]
+script = ExtResource( 14 )
 
 [node name="BlockTrigger" type="Area2D" parent="Level/BlockNode"]
 position = Vector2( 3662, -651 )
@@ -356,9 +357,8 @@ position = Vector2( 7, -3.5 )
 shape = SubResource( 21 )
 
 [node name="RedSquare" type="Sprite" parent="Level/BlockNode/BlockTrigger"]
-position = Vector2( -189, -7 )
+position = Vector2( -179, -7 )
 texture = ExtResource( 11 )
-script = ExtResource( 14 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
