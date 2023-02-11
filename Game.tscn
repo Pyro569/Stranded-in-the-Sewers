@@ -358,8 +358,4 @@ position = Vector2( 3662, -651 )
 position = Vector2( 7, -3.5 )
 shape = SubResource( 21 )
 
-[node name="RedSquare" type="Sprite" parent="Level/BlockNode/BlockTrigger"]
-position = Vector2( -147, -3 )
-texture = ExtResource( 11 )
-
 [connection signal="area_entered" from="Level/BlockNode/BlockTrigger" to="Players/Cat/KinematicBody2D" method="_on_BlockTrigger_area_entered"]
