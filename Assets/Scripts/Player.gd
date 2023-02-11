@@ -22,19 +22,21 @@ func _process(delta): #function _process is called every frame
 		velocity.y -= 1
 		
 	if velocity.y > -9.8:
-		velocity.y += 0.1 #GRAVITY!!!!!!
+		velocity.y += 0.5 #GRAVITY!!!!!!
 		
 	if velocity.x > 0:
 		velocity.x -= 0.5
 	elif velocity.x < 0:
 		velocity.x += 0.5 #FRICTION!!!!!
 		
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite.play()
-	else:
-		$AnimatedSprite.stop()
+	#if velocity.length() > 0:
+	#	velocity = velocity.normalized() * speed
+	#	$AnimatedSprite.play()
+	#else:
+	#	$AnimatedSprite.stop()
 		
+	print("X velocity: " + String(velocity.x))
+	print("Y velocity: " + String(velocity.y))
 
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
