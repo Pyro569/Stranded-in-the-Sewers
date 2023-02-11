@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Player",
+"class": "Cat",
+"language": "GDScript",
+"path": "res://Assets/Scripts/Cat.gd"
+}, {
+"base": "Player",
+"class": "Dog",
+"language": "GDScript",
+"path": "res://Assets/Scripts/Dog.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Assets/Scripts/Player.gd"
 } ]
 _global_script_class_icons={
+"Cat": "",
+"Dog": "",
 "Player": ""
 }
 

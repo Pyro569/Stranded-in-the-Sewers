@@ -20,9 +20,9 @@ func _process(delta):
 	if position.y > 10000:
 		position.y = 0
 	if position.x < -10000:
-		position.x = 1000
+		position.x = 10000
 	if position.x > 10000:
-		position.x = -700
+		position.x = -10000
 		
 
 func _physics_process(delta):

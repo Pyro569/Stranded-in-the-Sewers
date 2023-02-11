@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Images/Level/Cat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Images/Player/RedSquare.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -234,6 +235,13 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 
 [node name="Game" type="Node"]
 
+[node name="Camera" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+position = Vector2( 406, 0 )
+current = true
+script = ExtResource( 13 )
+
 [node name="Players" type="Node" parent="."]
 
 [node name="Cat" type="Node2D" parent="Players"]
@@ -244,25 +252,18 @@ z_index = 10
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Players/Cat/KinematicBody2D"]
-position = Vector2( 120, 108 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Cat/KinematicBody2D"]
-position = Vector2( 120, 108 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Players/Cat/KinematicBody2D"]
-position = Vector2( 120, 108 )
 script = SubResource( 10 )
 
 [node name="Button Hitbox" type="CollisionShape2D" parent="Players/Cat/KinematicBody2D/Area2D"]
 shape = SubResource( 9 )
-
-[node name="Camera2D" type="Camera2D" parent="Players/Cat/KinematicBody2D"]
-position = Vector2( 118, -30 )
-current = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players/Cat/KinematicBody2D"]
 stream = ExtResource( 10 )
@@ -271,18 +272,15 @@ stream = ExtResource( 10 )
 position = Vector2( 112, 26 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Players/Dog"]
-position = Vector2( 288, 30 )
 z_index = 10
 script = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Players/Dog/KinematicBody2D"]
-position = Vector2( 120, 108 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Dog/KinematicBody2D"]
-position = Vector2( 120, 108 )
 shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players/Dog/KinematicBody2D"]

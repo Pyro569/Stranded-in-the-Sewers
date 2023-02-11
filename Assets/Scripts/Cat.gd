@@ -1,3 +1,4 @@
+class_name Cat
 extends Player
 
 func _process(delta):
