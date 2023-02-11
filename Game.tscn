@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/Images/Level/Cat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Images/Player/RedSquare.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Scripts/BlockTrigger.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=15]
 [ext_resource path="res://Button.gd" type="Script" id=16]
 
@@ -271,6 +272,22 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 25, 25 )
 
+[sub_resource type="GDScript" id=10]
+script/source = "extends Area2D
+
+var nodePath
+
+func _ready():
+	nodePath = get_node(\"root/Level/Trigger\")
+
+func _on_Area2D_body_entered(body):
+	print(\"Collided\")
+	#blockNode.set_process(false)
+"
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 25, 25 )
+
 [node name="Game" type="Node"]
 
 [node name="Level" type="Node2D" parent="."]
@@ -317,12 +334,6 @@ icon = ExtResource( 11 )
 icon_align = 1
 script = ExtResource( 16 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera/Camera2D/Button"]
-position = Vector2( -144, -8 )
-stream = ExtResource( 12 )
-autoplay = true
-max_distance = 1e+07
-
 [node name="Players" type="Node" parent="."]
 
 [node name="Cat" type="Node2D" parent="Players"]
@@ -340,6 +351,12 @@ animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Cat/KinematicBody2D"]
 shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Players/Cat/KinematicBody2D"]
+script = SubResource( 10 )
+
+[node name="Button Hitbox" type="CollisionShape2D" parent="Players/Cat/KinematicBody2D/Area2D"]
+shape = SubResource( 9 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players/Cat/KinematicBody2D"]
 position = Vector2( 12, -30 )

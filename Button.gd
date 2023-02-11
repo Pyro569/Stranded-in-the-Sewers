@@ -26,4 +26,4 @@ func _process(delta):
 			isPaused = 0
 
 func _pressed():
-	get_tree().change_scene("res://TitleScreen.tscn")
+	get_tree().quit()
