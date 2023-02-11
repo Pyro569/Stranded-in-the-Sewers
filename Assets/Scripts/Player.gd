@@ -13,6 +13,8 @@ var RightDown = false
 var LeftDown = false
 var UpDown = false
 
+var nodePath
+
 var jumpSound = preload("res://Assets/Sounds/jump.wav")
 
 func _process(delta):
@@ -48,8 +50,8 @@ func _physics_process(delta):
 		
 func _on_BlockTrigger_area_entered(area):
 	print("Collided")
-	var BlockTrigger = get_node("root/Level/Node2D")
-	
+	nodePath = get_node("/root/Game/Level/BlockNode/BlockTrigger/RedSquare")
+	nodePath.hide()
 	
 	#print("X Velocity: " + String(velocity.x))
 	#print("Y Velocity: " + String(velocity.y))
