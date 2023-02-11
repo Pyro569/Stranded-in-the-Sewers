@@ -19,14 +19,15 @@ func _process(delta): #function _process is called every frame
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 		
+	if velocity.y > -9.8:
+		velocity.y += 0.1 #GRAVITY!!!!!!
+		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite.play()
 	else:
 		$AnimatedSprite.stop()
 		
-	if velocity.y > -9.8:
-		velocity.y -= 0.1 #gravity???
 
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
