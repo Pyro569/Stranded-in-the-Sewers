@@ -1,6 +1,8 @@
 class_name Dog
 extends Player
 
+var finishedCount = 0
+
 func _process(delta):
 	if Input.is_action_pressed("move_right2"):
 		RightDown = true
@@ -14,3 +16,10 @@ func _process(delta):
 		UpDown = true
 	else:
 		UpDown = false
+		
+func _on_BlockTrigger_area_entered(area):
+	finishedCount += 1
+	
+func _on_BlockTrigger_area_exited(area):
+	finishedCount -= 1
+	

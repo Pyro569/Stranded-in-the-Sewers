@@ -1,6 +1,8 @@
 class_name Cat
 extends Player
 
+var finishedCount = 0
+
 func _process(delta):
 	if Input.is_action_pressed("move_right"):
 		RightDown = true
@@ -16,5 +18,11 @@ func _process(delta):
 		UpDown = false
 
 
+func _on_BlockTrigger_area_entered(area):
+	finishedCount = +1
+	print(finishedCount)
+	
 func _on_BlockTrigger_area_exited(area):
-	pass # Replace with function body.
+	finishedCount = -1
+	print(finishedCount)
+	

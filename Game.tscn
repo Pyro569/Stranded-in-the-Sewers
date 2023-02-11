@@ -293,6 +293,10 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	print(\"Collided\")
 	#blockNode.set_process(false)
+
+
+func _on_BlockTrigger_area_entered(area):
+	pass # Replace with function body.
 "
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -318,10 +322,10 @@ format = 1
 
 [node name="Finish" type="Node2D" parent="Level"]
 position = Vector2( -2182, 686 )
-script = ExtResource( 14 )
 
 [node name="BlockTrigger" type="Area2D" parent="Level/Finish"]
 position = Vector2( 4784, -713 )
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Finish/BlockTrigger"]
 position = Vector2( 336, 100 )
@@ -395,5 +399,5 @@ shape = SubResource( 2 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players/Dog/KinematicBody2D"]
 stream = ExtResource( 10 )
 
+[connection signal="area_entered" from="Level/Finish/BlockTrigger" to="Players/Cat/KinematicBody2D" method="_on_BlockTrigger_area_entered"]
 [connection signal="area_entered" from="Level/Finish/BlockTrigger" to="Players/Dog/KinematicBody2D" method="_on_BlockTrigger_area_entered"]
-[connection signal="area_exited" from="Level/Finish/BlockTrigger" to="Players/Dog/KinematicBody2D" method="_on_BlockTrigger_area_exited"]
