@@ -29,10 +29,6 @@ func _process(frameLength): #function _process is called every frame, for frameL
 	elif velocity.x < 0:
 		velocity.x += 0.5 #FRICTION!!!!!
 		
-	print("X velocity: " + String(velocity.x))
-	print("Y velocity: " + String(velocity.y))
-	print("Framerate: " + String(1/frameLength))
-
 	position += velocity * frameLength
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
