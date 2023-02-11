@@ -15,7 +15,7 @@ var UpDown = false
 
 func _physics_process(delta):
 	if RightDown:
-		velocity.x = +maxSpeed	
+		velocity.x = +maxSpeed
 	elif LeftDown:
 		velocity.x = -maxSpeed
 	elif is_on_floor():
@@ -24,8 +24,10 @@ func _physics_process(delta):
 	
 	if UpDown:
 		if is_on_floor():
-			velocity.y = - JUMPSPEED	
+			velocity.y = - JUMPSPEED
 	
 	velocity.y += GRAVITY
 		
 	move_and_slide(velocity, FLOOR)
+	print("X Velocity: " + String(velocity.x))
+	print("Y Velocity: " + String(velocity.y))
