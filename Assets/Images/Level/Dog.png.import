@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dog.png-040d894172969b738300f6994095b508.stex"
+path="res://import/Dog.png-040d894172969b738300f6994095b508.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Assets/Images/Level/Dog.png"
-dest_files=[ "res://.import/Dog.png-040d894172969b738300f6994095b508.stex" ]
+dest_files=[ "res://import/Dog.png-040d894172969b738300f6994095b508.stex" ]
 
 [params]
 

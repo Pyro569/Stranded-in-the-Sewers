@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ReallyBadWater.png-c1bd591d5cfd32b98b26df9dbeb5f48f.stex"
+path="res://import/ReallyBadWater.png-c1bd591d5cfd32b98b26df9dbeb5f48f.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Assets/Images/Level/ReallyBadWater.png"
-dest_files=[ "res://.import/ReallyBadWater.png-c1bd591d5cfd32b98b26df9dbeb5f48f.stex" ]
+dest_files=[ "res://import/ReallyBadWater.png-c1bd591d5cfd32b98b26df9dbeb5f48f.stex" ]
 
 [params]
 

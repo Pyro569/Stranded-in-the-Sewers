@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Drain.png-234257d829b45383a605b97752abfc4f.stex"
+path="res://import/Drain.png-234257d829b45383a605b97752abfc4f.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Assets/Images/Level/Drain.png"
-dest_files=[ "res://.import/Drain.png-234257d829b45383a605b97752abfc4f.stex" ]
+dest_files=[ "res://import/Drain.png-234257d829b45383a605b97752abfc4f.stex" ]
 
 [params]
 
