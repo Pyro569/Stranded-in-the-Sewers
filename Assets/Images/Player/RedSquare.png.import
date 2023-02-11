@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RedSquare.png-a98fd5074c1f5a3dd7147b6f6bb8e66b.stex"
+path="res://import/RedSquare.png-a98fd5074c1f5a3dd7147b6f6bb8e66b.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Assets/Images/Player/RedSquare.png"
-dest_files=[ "res://.import/RedSquare.png-a98fd5074c1f5a3dd7147b6f6bb8e66b.stex" ]
+dest_files=[ "res://import/RedSquare.png-a98fd5074c1f5a3dd7147b6f6bb8e66b.stex" ]
 
 [params]
 

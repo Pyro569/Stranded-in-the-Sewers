@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LowerWater.png-3dd972248f6519932b09223273e31971.stex"
+path="res://import/LowerWater.png-3dd972248f6519932b09223273e31971.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Assets/Images/Level/LowerWater.png"
-dest_files=[ "res://.import/LowerWater.png-3dd972248f6519932b09223273e31971.stex" ]
+dest_files=[ "res://import/LowerWater.png-3dd972248f6519932b09223273e31971.stex" ]
 
 [params]
 
