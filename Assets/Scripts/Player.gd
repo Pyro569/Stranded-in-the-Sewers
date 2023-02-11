@@ -33,12 +33,14 @@ func _process(frameLength): #function _process is called every frame, for frameL
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 
-func _on_Player_body_entered(body):
-	hide() #player disappears after being hit
-	emit_signal("hit")
-	$CollisionShape2D.set_deferred("disabled", true)
 
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+
+func _on_Ground_body_entered(body):
+	emit_signal("hit")
+	print("COLLIDED")
+	$CollisionShape2D.set_deferred("disabled", true)
