@@ -14,3 +14,7 @@ func _process(delta):
 		UpDown = true
 	else:
 		UpDown = false
+
+
+func _on_BlockTrigger_area_exited(area):
+	pass # Replace with function body.
