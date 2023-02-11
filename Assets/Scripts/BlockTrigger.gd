@@ -13,14 +13,13 @@ func _ready():
 
 func _process(delta):
 	print(finishedCount)
-	if finishedCount == 2:
+	if finishedCount >= 3:
 		get_tree().change_scene("res://Level2.tscn")
 		
 #unc _on
 
-func _on_BlockTrigger_area_entered(area):
+func _on_PlayerCollision_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	finishedCount += 1
 	
-func _on_BlockTrigger_area_exited(area):
+func _on_PlayerCollision_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	finishedCount -= 1
-	
