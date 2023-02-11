@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ground.png-e112f744acaaa7300ceda2652087a290.stex"
+path="res://.import/Dog.png-040d894172969b738300f6994095b508.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Unused/Ground.png"
-dest_files=[ "res://.import/Ground.png-e112f744acaaa7300ceda2652087a290.stex" ]
+source_file="res://Assets/Images/Level/Dog.png"
+dest_files=[ "res://.import/Dog.png-040d894172969b738300f6994095b508.stex" ]
 
 [params]
 
