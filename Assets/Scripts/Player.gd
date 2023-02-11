@@ -1,3 +1,4 @@
+class_name Player
 extends KinematicBody2D
 
 const GRAVITY = 20
@@ -8,16 +9,20 @@ var velocity = Vector2.ZERO
 
 var maxSpeed = 300
 
+var RightDown = false
+var LeftDown = false
+var UpDown = false
+
 func _physics_process(delta):
-	if Input.is_action_pressed("move_right"):
+	if RightDown:
 		velocity.x = +maxSpeed	
-	elif Input.is_action_pressed("move_left"):
+	elif LeftDown:
 		velocity.x = -maxSpeed
 	elif is_on_floor():
 		velocity.x = 0
 
 	
-	if Input.is_action_pressed("move_up"):
+	if UpDown:
 		if is_on_floor():
 			velocity.y = - JUMPSPEED	
 	

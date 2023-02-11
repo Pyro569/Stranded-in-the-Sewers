@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Images/Unused/Cat.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Images/Unused/Ground.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/Unused/Dog.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Unused/Drain.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Scripts/Player2.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -92,39 +92,41 @@ extents = Vector2( 383.5, 96 )
 
 [node name="Game" type="Node"]
 
-[node name="Player1" type="Node2D" parent="."]
+[node name="Players" type="Node" parent="."]
 
-[node name="Player1" type="KinematicBody2D" parent="Player1"]
+[node name="Cat" type="Node2D" parent="Players"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Players/Cat"]
 position = Vector2( 288, 30 )
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player1/Player1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Players/Cat/KinematicBody2D"]
 position = Vector2( 120, 108 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/Player1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Cat/KinematicBody2D"]
 position = Vector2( 120, 108 )
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="Player1/Player1"]
+[node name="Camera2D" type="Camera2D" parent="Players/Cat/KinematicBody2D"]
 position = Vector2( 120, 108 )
 
-[node name="Player2" type="Node2D" parent="."]
+[node name="Dog" type="Node2D" parent="Players"]
 position = Vector2( 112, 26 )
 
-[node name="Player2" type="KinematicBody2D" parent="Player2"]
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Players/Dog"]
 position = Vector2( 288, 30 )
 script = ExtResource( 6 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player2/Player2"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Players/Dog/KinematicBody2D"]
 position = Vector2( 120, 108 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/Player2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Dog/KinematicBody2D"]
 position = Vector2( 120, 108 )
 shape = SubResource( 2 )
 
