@@ -29,12 +29,6 @@ func _process(delta): #function _process is called every frame
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 
-	if velocity.x < 0:
-		$AnimatedSprite.flip_h = true #flip sprite
-	else:
-		$AnimatedSprite.flip_h = false #dont flip sprite
-
-
 func _on_Player_body_entered(body):
 	hide() #player disappears after being hit
 	emit_signal("hit")

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ohio.png-42f203fe1bae9dd2654e20a32e955eb2.stex"
+path="res://.import/icon.png-d4a4722357ffcf7f4a68e241e1e4913c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/ohio.png"
-dest_files=[ "res://.import/ohio.png-42f203fe1bae9dd2654e20a32e955eb2.stex" ]
+source_file="res://Assets/Images/Unused/icon.png"
+dest_files=[ "res://.import/icon.png-d4a4722357ffcf7f4a68e241e1e4913c.stex" ]
 
 [params]
 
