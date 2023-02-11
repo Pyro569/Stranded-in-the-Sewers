@@ -348,6 +348,10 @@ position = Vector2( 3662, -651 )
 position = Vector2( 7, -3.5 )
 shape = SubResource( 21 )
 
+[node name="RedSquare" type="Sprite" parent="Level/BlockNode/BlockTrigger"]
+position = Vector2( -179, -7 )
+texture = ExtResource( 11 )
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
