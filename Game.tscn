@@ -307,3 +307,12 @@ tile_data = PoolIntArray( -655321, 2, 0, -262109, 2, 0, -65496, 2, 0 )
 stream = ExtResource( 12 )
 autoplay = true
 max_distance = 1e+07
+
+[node name="Button" type="Button" parent="."]
+margin_left = 72.0
+margin_top = -232.0
+margin_right = 184.0
+margin_bottom = -126.0
+text = "Quit Game"
+icon = ExtResource( 11 )
+icon_align = 1
