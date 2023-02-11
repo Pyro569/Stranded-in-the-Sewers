@@ -13,6 +13,11 @@ var RightDown = false
 var LeftDown = false
 var UpDown = false
 
+func _process(delta):
+	#print(position.y)
+	if position.y > 1000:
+		position.y = 0
+
 func _physics_process(delta):
 	if RightDown:
 		velocity.x = +maxSpeed	
@@ -32,5 +37,5 @@ func _physics_process(delta):
 	if is_on_floor():
 		velocity.y = 0
 	
-	print("X Velocity: " + String(velocity.x))
-	print("Y Velocity: " + String(velocity.y))
+	#print("X Velocity: " + String(velocity.x))
+	#print("Y Velocity: " + String(velocity.y))
