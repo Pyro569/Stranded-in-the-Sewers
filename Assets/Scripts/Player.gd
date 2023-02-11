@@ -21,10 +21,10 @@ func _physics_process(delta):
 	elif is_on_floor():
 		velocity.x = 0
 
-	
 	if UpDown:
 		if is_on_floor():
-			velocity.y = - JUMPSPEED	
+			velocity.y = - JUMPSPEED
+			
 	
 	velocity.y += GRAVITY
 		
