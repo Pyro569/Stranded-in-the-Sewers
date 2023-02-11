@@ -25,6 +25,5 @@ func _process(delta):
 			self.visible = false
 			isPaused = 0
 
-func _on_Button_pressed():
-	print("Exiting...")
+func _pressed():
 	get_tree().quit()
