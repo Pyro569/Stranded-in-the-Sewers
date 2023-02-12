@@ -354,6 +354,16 @@ icon = ExtResource( 11 )
 icon_align = 1
 script = ExtResource( 16 )
 
+[node name="Node2D2" type="Node2D" parent="Camera/Camera2D"]
+z_index = 30
+
+[node name="ColorRect" type="ColorRect" parent="Camera/Camera2D/Node2D2"]
+margin_left = -340.0
+margin_top = -240.0
+margin_right = 340.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="Players" type="Node" parent="."]
 
 [node name="Cat" type="Node2D" parent="Players"]
