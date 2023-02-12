@@ -52,6 +52,10 @@ func _physics_process(delta):
 	move_and_slide(velocity, FLOOR)
 	if is_on_floor():
 		velocity.y = 0
+	if is_on_wall():
+		velocity.x = 0
+	if is_on_ceiling():
+		velocity.y = 0
 		
 	
 	#print("X Velocity: " + String(velocity.x))

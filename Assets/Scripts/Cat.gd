@@ -26,3 +26,5 @@ func _on_BlockTrigger_area_exited(area):
 	finishedCount -= 1
 	print(finishedCount)
 	
+	
+	
