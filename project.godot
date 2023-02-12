@@ -19,15 +19,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Scripts/Dog.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "PlayerGroup",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Assets/Scripts/Player.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerGroup",
+"language": "GDScript",
+"path": "res://Assets/Scripts/PlayerGroup.gd"
 } ]
 _global_script_class_icons={
 "Cat": "",
 "Dog": "",
-"Player": ""
+"Player": "",
+"PlayerGroup": ""
 }
 
 [application]

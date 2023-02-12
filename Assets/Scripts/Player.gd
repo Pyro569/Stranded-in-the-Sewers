@@ -1,5 +1,5 @@
 class_name Player
-extends KinematicBody2D
+extends PlayerGroup
 
 signal Pressed
 
@@ -20,17 +20,18 @@ var nodePath
 
 var jumpSound = preload("res://Assets/Sounds/jump.wav")
 
+func respawn():
+	position.y = 0
+	position.x = 0
+
 func _process(delta):
 	#print(position.y)
 	if position.y > 10000:
-		position.y = 0
-		position.x = 0
+		respawn()
 	elif position.x < -10000:
-		position.y = 0
-		position.x = 0
+		respawn()
 	elif position.x > 10000:
-		position.y = 0
-		position.x = 0
+		respawn()
 
 func _physics_process(delta):
 	if RightDown:

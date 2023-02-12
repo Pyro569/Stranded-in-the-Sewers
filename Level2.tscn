@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/Images/Level/Cat.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Images/Level/ExitDoor.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Images/Level/GreenLowerWater.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
@@ -180,6 +181,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 1100, 100 )
+
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ ExtResource( 10 ) ],
@@ -228,6 +232,12 @@ shape = SubResource( 30 )
 z_index = -1
 frames = SubResource( 31 )
 
+[node name="Death" type="Area2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Death"]
+position = Vector2( 1938, 173 )
+shape = SubResource( 38 )
+
 [node name="Camera" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
@@ -264,13 +274,13 @@ margin_right = 340.0
 margin_bottom = 240.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Players" type="Node" parent="."]
+[node name="Players" type="KinematicBody2D" parent="."]
+script = ExtResource( 21 )
 
 [node name="Cat" type="Node2D" parent="Players"]
-position = Vector2( -200, 100 )
+position = Vector2( -334, 75 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Players/Cat"]
-position = Vector2( -150, -25 )
 z_index = 10
 script = ExtResource( 5 )
 
@@ -318,3 +328,5 @@ shape = SubResource( 37 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
+
+[connection signal="area_shape_entered" from="Level/Death" to="Players" method="_on_Death_area_shape_entered"]
