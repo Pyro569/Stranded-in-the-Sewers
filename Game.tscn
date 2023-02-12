@@ -297,10 +297,6 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	print(\"Collided\")
 	#blockNode.set_process(false)
-
-
-func _on_BlockTrigger_area_entered(area):
-	pass # Replace with function body.
 "
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -363,6 +359,7 @@ script = ExtResource( 16 )
 z_index = 30
 
 [node name="ColorRect" type="ColorRect" parent="Camera/Camera2D/Node2D2"]
+visible = false
 margin_left = -340.0
 margin_top = -240.0
 margin_right = 340.0
