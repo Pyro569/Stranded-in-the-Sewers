@@ -24,10 +24,13 @@ func _process(delta):
 	#print(position.y)
 	if position.y > 10000:
 		position.y = 0
-	if position.x < -10000:
-		position.x = 10000
-	if position.x > 10000:
-		position.x = -10000
+		position.x = 0
+	elif position.x < -10000:
+		position.y = 0
+		position.x = 0
+	elif position.x > 10000:
+		position.y = 0
+		position.x = 0
 
 func _physics_process(delta):
 	if RightDown:
