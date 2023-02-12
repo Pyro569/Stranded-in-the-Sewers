@@ -1,13 +1,13 @@
 class_name Player
 extends KinematicBody2D
 
-const GRAVITY = 20
+const GRAVITY = 17
 const JUMPSPEED = 700
 const FLOOR = Vector2(0, -1)
 
 var velocity = Vector2.ZERO
 
-var maxSpeed = 300
+var maxSpeed = 350
 
 var RightDown = false
 var LeftDown = false
