@@ -10,9 +10,8 @@ var screensize
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screensize = get_viewport_rect().size
-	var anchorSizeSpot = -(screensize/2)
 	self.set_size(screensize)
-	self.set_position(anchorSizeSpot)
+	self.set_position(-(screensize/2))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
