@@ -1,6 +1,8 @@
 class_name Player
 extends KinematicBody2D
 
+signal Pressed
+
 const GRAVITY = 17
 const JUMPSPEED = 700
 const FLOOR = Vector2(0, -1)
@@ -60,3 +62,4 @@ func _physics_process(delta):
 	
 	#print("X Velocity: " + String(velocity.x))
 	#print("Y Velocity: " + String(velocity.y))
+
