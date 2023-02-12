@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
@@ -181,6 +181,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 1100, 100 )
+
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ ExtResource( 10 ) ],
@@ -233,7 +236,7 @@ frames = SubResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Death"]
 position = Vector2( 1938, 173 )
-shape = SubResource( 38 )
+shape = SubResource( 40 )
 
 [node name="Camera" type="Node" parent="."]
 

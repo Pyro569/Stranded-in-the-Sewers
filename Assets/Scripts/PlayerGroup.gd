@@ -19,5 +19,5 @@ func _ready():
 
 func _on_Death_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	for player in self.get_children():
-		print(player.name, " ", player.position)
+		#print(player.name, " ", player.position)
 		player.get_node("KinematicBody2D").respawn()
