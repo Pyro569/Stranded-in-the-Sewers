@@ -328,7 +328,7 @@ position = Vector2( 4784, -713 )
 script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Finish/BlockTrigger"]
-position = Vector2( 336, 100 )
+position = Vector2( -2764, 1401 )
 z_index = 1
 shape = SubResource( 21 )
 
@@ -359,7 +359,6 @@ script = ExtResource( 16 )
 z_index = 30
 
 [node name="ColorRect" type="ColorRect" parent="Camera/Camera2D/Node2D2"]
-visible = false
 margin_left = -340.0
 margin_top = -240.0
 margin_right = 340.0

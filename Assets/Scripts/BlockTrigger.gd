@@ -12,8 +12,7 @@ func _ready():
 	self.get_parent().get_parent().get_parent().get_node("Camera/Camera2D/Node2D2/ColorRect").modulate.a8 = 0
 
 func _process(delta):
-	print(finishedCount)
-	if finishedCount >= 3:
+	if finishedCount >= 2:
 		finishedCount = 0
 		var i = 0
 		self.get_node("CollisionShape2D/AnimatedSprite").play("default")
@@ -26,7 +25,9 @@ func _process(delta):
 #unc _on
 
 func _on_PlayerCollision_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	finishedCount += 1
-	
+	if(area.name == "BlockTrigger"):
+		finishedCount += 1
+
 func _on_PlayerCollision_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
-	finishedCount -= 1
+	if(area.name == "BlockTrigger"):
+		finishedCount -= 1

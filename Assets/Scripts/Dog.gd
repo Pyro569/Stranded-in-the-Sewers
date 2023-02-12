@@ -17,9 +17,3 @@ func _process(delta):
 	else:
 		UpDown = false
 		
-func _on_BlockTrigger_area_entered(area):
-	finishedCount += 1
-	
-func _on_BlockTrigger_area_exited(area):
-	finishedCount -= 1
-	
