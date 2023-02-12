@@ -9,13 +9,14 @@ extends Node
 var finishedCount = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.get_parent().get_parent().get_parent().get_node("Camera/Camera2D/Node2D2/ColorRect").visible = true
 	self.get_parent().get_parent().get_parent().get_node("Camera/Camera2D/Node2D2/ColorRect").modulate.a8 = 0
 
 func _process(delta):
 	if finishedCount >= 2:
 		finishedCount = 0
 		var i = 0
-		self.get_node("CollisionShape2D/AnimatedSprite").play("default")
+		self.get_node("Triple/AnimatedSprite").play("default")
 		while i != 255:
 			self.get_parent().get_parent().get_parent().get_node("Camera/Camera2D/Node2D2/ColorRect").modulate.a8 += 1
 			i += 1

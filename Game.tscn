@@ -253,7 +253,6 @@ position = Vector2( 40, 985 )
 shape = SubResource( 27 )
 
 [node name="accessBlock" type="TileMap" parent="Level"]
-visible = false
 position = Vector2( 438, 173 )
 tile_set = SubResource( 29 )
 cell_size = Vector2( 100, 100 )
@@ -287,10 +286,10 @@ icon_align = 1
 script = ExtResource( 16 )
 
 [node name="Node2D2" type="Node2D" parent="Camera/Camera2D"]
-visible = false
 z_index = 30
 
 [node name="ColorRect" type="ColorRect" parent="Camera/Camera2D/Node2D2"]
+visible = false
 margin_left = -340.0
 margin_top = -240.0
 margin_right = 340.0
