@@ -169,7 +169,7 @@ extents = Vector2( 25, 25 )
 [sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 50, 50 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Level2" type="Node"]
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( -138, -73 )
@@ -201,7 +201,7 @@ frames = SubResource( 31 )
 [node name="Camera" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
-position = Vector2( 406, 0 )
+position = Vector2( -100, 0 )
 current = true
 script = ExtResource( 1 )
 
