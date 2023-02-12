@@ -31,6 +31,6 @@ margin_left = -74.5
 margin_top = -28.0
 margin_right = 83.5
 margin_bottom = -12.0
-text = "Stranded In The Sewer"
+text = "Stranded In The Sewers"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_StartButton_pressed"]
