@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=2]
@@ -287,6 +287,13 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 2000, 150 )
 
+[sub_resource type="PhysicsMaterial" id=44]
+bounce = 10.0
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 50, 50 )
+
 [sub_resource type="RectangleShape2D" id=43]
 extents = Vector2( 50, 50 )
 
@@ -439,12 +446,19 @@ position = Vector2( 4538, 223 )
 shape = SubResource( 42 )
 
 [node name="Box" type="RigidBody2D" parent="Level"]
-mass = 102.041
-gravity_scale = 64.0
+physics_material_override = SubResource( 44 )
+gravity_scale = 32.0
+sleeping = true
 script = ExtResource( 24 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Level/Box"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Box/StaticBody2D"]
+position = Vector2( -12, 198 )
+shape = SubResource( 45 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Box"]
-position = Vector2( 2488, -577 )
+position = Vector2( -12, 198 )
 shape = SubResource( 43 )
 
 [node name="Sprite" type="Sprite" parent="Level/Box/CollisionShape2D"]
