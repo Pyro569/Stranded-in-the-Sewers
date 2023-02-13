@@ -11,6 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
+	print(position)
 	if physics:
 		print(self.get_parent().get_node("Death").position.y - self.position.y)
 
