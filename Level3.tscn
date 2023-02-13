@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=23]
 [ext_resource path="res://Assets/Scripts/Box.gd" type="Script" id=24]
+[ext_resource path="res://Assets/Images/Level/crate.png" type="Texture" id=25]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -447,7 +448,7 @@ position = Vector2( 2488, -577 )
 shape = SubResource( 43 )
 
 [node name="Sprite" type="Sprite" parent="Level/Box/CollisionShape2D"]
-texture = ExtResource( 10 )
+texture = ExtResource( 25 )
 
 [connection signal="area_entered" from="Level/Area2D" to="Level/AccessBlock" method="_on_Area2D_area_entered"]
 [connection signal="area_shape_entered" from="Level/Death" to="Players" method="_on_Death_area_shape_entered"]
