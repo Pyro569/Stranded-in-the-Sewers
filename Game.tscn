@@ -1,9 +1,9 @@
 [gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://Assets/Images/Level/Cat.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Player/Cat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Images/Level/Ground.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Images/Level/Dog.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Level/Drain.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Images/Level/HopefullyTileableWater.png" type="Texture" id=7]

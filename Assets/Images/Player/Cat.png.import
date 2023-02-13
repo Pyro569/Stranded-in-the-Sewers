@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://import/Dog.png-040d894172969b738300f6994095b508.stex"
+path="res://import/Cat.png-ee8c582762eaa8ea8f975d384dfc274e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Level/Dog.png"
-dest_files=[ "res://import/Dog.png-040d894172969b738300f6994095b508.stex" ]
+source_file="res://Assets/Images/Player/Cat.png"
+dest_files=[ "res://import/Cat.png-ee8c582762eaa8ea8f975d384dfc274e.stex" ]
 
 [params]
 
