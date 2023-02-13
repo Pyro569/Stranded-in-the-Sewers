@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Assets/Images/Level/GreenLowerWater.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Scripts/ScaleFade.gd" type="Script" id=22]
+[ext_resource path="res://Assets/Images/pulley.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=38]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
@@ -330,6 +331,10 @@ shape = SubResource( 37 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
+
+[node name="Pulley" type="Sprite" parent="."]
+position = Vector2( 2450, -900 )
+texture = ExtResource( 23 )
 
 [connection signal="area_shape_entered" from="Level/Death" to="Players" method="_on_Death_area_shape_entered"]
 [connection signal="area_shape_entered" from="Players/Cat/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_entered"]
