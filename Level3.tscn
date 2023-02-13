@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=2]
@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Images/Player/RedSquare.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Images/Level/ExitDoor.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Scripts/Level2Finish.gd" type="Script" id=12]
+[ext_resource path="res://Assets/Scripts/Level3Finish.gd" type="Script" id=12]
 [ext_resource path="res://Assets/Images/Level/Ground.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Images/Level/Background.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Images/Level/Drain.png" type="Texture" id=15]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/Scripts/accessBlock.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Scripts/ScaleFade.gd" type="Script" id=24]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -369,6 +370,7 @@ margin_top = -240.0
 margin_right = 340.0
 margin_bottom = 240.0
 color = Color( 0, 0, 0, 1 )
+script = ExtResource( 24 )
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( -138, -73 )
@@ -427,5 +429,9 @@ frames = SubResource( 26 )
 position = Vector2( 4538, 223 )
 shape = SubResource( 42 )
 
+[connection signal="area_shape_entered" from="Players/Cat/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_entered"]
+[connection signal="area_shape_exited" from="Players/Cat/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_exited"]
+[connection signal="area_shape_entered" from="Players/Dog/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_entered"]
+[connection signal="area_shape_exited" from="Players/Dog/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_exited"]
 [connection signal="area_entered" from="Level/Area2D" to="Level/AccessBlock" method="_on_Area2D_area_entered"]
 [connection signal="area_shape_entered" from="Level/Death" to="Players" method="_on_Death_area_shape_entered"]
