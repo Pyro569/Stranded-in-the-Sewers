@@ -40,7 +40,7 @@ _global_script_class_icons={
 
 config/name="Stranded In The Sewers"
 config/description="Red Cat and Blue Dog have fallen into the Detroit Sewers! You and a friend must help them escape! Solve puzzles and jump from platform to platform to escape!"
-run/main_scene="res://TitleScreen.tscn"
+run/main_scene="res://Level3.tscn"
 config/use_hidden_project_data_directory=false
 boot_splash/show_image=false
 boot_splash/image="res://Assets/Images/Unused/ohio.png"
