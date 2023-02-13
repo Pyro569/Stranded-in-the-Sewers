@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
-[ext_resource path="res://Button.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Scripts/Button.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/Level2Finish.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=6]

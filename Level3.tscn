@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Images/Level/Dog.png" type="Texture" id=2]
-[ext_resource path="res://Button.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Scripts/Button.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Images/Level/Cat.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=6]

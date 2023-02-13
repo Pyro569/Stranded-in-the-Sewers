@@ -15,14 +15,14 @@
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Scripts/BlockTrigger.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=15]
-[ext_resource path="res://Button.gd" type="Script" id=16]
+[ext_resource path="res://Assets/Scripts/Button.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Images/Level/ExitOpen.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=18]
-[ext_resource path="res://AccessBlock.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Scripts/accessBlock.gd" type="Script" id=19]
 [ext_resource path="res://Assets/Scripts/ScaleFade.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Images/Level/toxicwater.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Images/Level/GreenLowerWater.png" type="Texture" id=22]
-[ext_resource path="res://Area2D.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=30]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
