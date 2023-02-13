@@ -438,7 +438,8 @@ position = Vector2( 4538, 223 )
 shape = SubResource( 42 )
 
 [node name="Box" type="RigidBody2D" parent="Level"]
-mass = 2.11
+mass = 102.041
+gravity_scale = 64.0
 script = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Box"]
