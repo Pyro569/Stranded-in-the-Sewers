@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/Scripts/accessBlock.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Scripts/Box.gd" type="Script" id=24]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -285,6 +286,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 2000, 150 )
 
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 50, 50 )
+
 [node name="Level3" type="Node"]
 
 [node name="Players" type="KinematicBody2D" parent="."]
@@ -433,5 +437,18 @@ frames = SubResource( 26 )
 position = Vector2( 4538, 223 )
 shape = SubResource( 42 )
 
+[node name="Box" type="RigidBody2D" parent="Level"]
+mass = 2.11
+script = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Box"]
+position = Vector2( 2488, -577 )
+shape = SubResource( 43 )
+
+[node name="Sprite" type="Sprite" parent="Level/Box/CollisionShape2D"]
+texture = ExtResource( 10 )
+
 [connection signal="area_entered" from="Level/Area2D" to="Level/AccessBlock" method="_on_Area2D_area_entered"]
 [connection signal="area_shape_entered" from="Level/Death" to="Players" method="_on_Death_area_shape_entered"]
+[connection signal="area_shape_entered" from="Level/Death" to="Level/Box" method="_on_Death_area_shape_entered"]
+[connection signal="area_shape_exited" from="Level/Death" to="Level/Box" method="_on_Death_area_shape_exited"]
