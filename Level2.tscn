@@ -239,15 +239,29 @@ frames = SubResource( 31 )
 position = Vector2( 1938, 173 )
 shape = SubResource( 40 )
 
+[node name="Fadeout" type="Node2D" parent="."]
+position = Vector2( -100, 0 )
+z_index = 15
+z_as_relative = false
+
+[node name="ColorRect" type="ColorRect" parent="Fadeout"]
+visible = false
+margin_left = -340.0
+margin_top = -240.0
+margin_right = 340.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 22 )
+
 [node name="Camera" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
-position = Vector2( -100, 0 )
+position = Vector2( -1984, -240 )
 current = true
 script = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="Camera/Camera2D"]
-position = Vector2( -310, -56 )
+position = Vector2( -60, -56 )
 z_index = 20
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera/Camera2D/Node2D"]
@@ -263,18 +277,6 @@ text = "Quit Game"
 icon = ExtResource( 8 )
 icon_align = 1
 script = ExtResource( 3 )
-
-[node name="Node2D2" type="Node2D" parent="Camera/Camera2D"]
-z_index = 30
-
-[node name="ColorRect" type="ColorRect" parent="Camera/Camera2D/Node2D2"]
-visible = false
-margin_left = -340.0
-margin_top = -240.0
-margin_right = 340.0
-margin_bottom = 240.0
-color = Color( 0, 0, 0, 1 )
-script = ExtResource( 22 )
 
 [node name="Players" type="KinematicBody2D" parent="."]
 script = ExtResource( 21 )

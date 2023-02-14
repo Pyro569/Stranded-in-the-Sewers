@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=2]
@@ -24,7 +24,6 @@
 [ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=23]
 [ext_resource path="res://Assets/Scripts/Box.gd" type="Script" id=24]
-[ext_resource path="res://Assets/Images/Level/crate.png" type="Texture" id=25]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -291,12 +290,6 @@ extents = Vector2( 2000, 150 )
 bounce = 10.0
 absorbent = true
 
-[sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 50, 50 )
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 50, 50 )
-
 [node name="Level3" type="Node"]
 
 [node name="Players" type="KinematicBody2D" parent="."]
@@ -352,10 +345,23 @@ stream = ExtResource( 1 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 6 )
 
+[node name="Fadeout" type="Node2D" parent="."]
+position = Vector2( -100, 0 )
+z_index = 30
+
+[node name="ColorRect" type="ColorRect" parent="Fadeout"]
+visible = false
+margin_left = -340.0
+margin_top = -240.0
+margin_right = 340.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="Camera" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
-position = Vector2( -100, 0 )
+position = Vector2( -2560, -160 )
+z_as_relative = false
 current = true
 script = ExtResource( 8 )
 
@@ -370,23 +376,14 @@ volume_db = -21.849
 autoplay = true
 
 [node name="Button" type="Button" parent="Camera/Camera2D/Node2D"]
-margin_right = 112.0
-margin_bottom = 106.0
+margin_left = 260.0
+margin_top = 6.0
+margin_right = 372.0
+margin_bottom = 112.0
 text = "Quit Game"
 icon = ExtResource( 10 )
 icon_align = 1
 script = ExtResource( 3 )
-
-[node name="Node2D2" type="Node2D" parent="Camera/Camera2D"]
-z_index = 30
-
-[node name="ColorRect" type="ColorRect" parent="Camera/Camera2D/Node2D2"]
-visible = false
-margin_left = -340.0
-margin_top = -240.0
-margin_right = 340.0
-margin_bottom = 240.0
-color = Color( 0, 0, 0, 1 )
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( -138, -73 )
@@ -452,17 +449,6 @@ sleeping = true
 script = ExtResource( 24 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Level/Box"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Box/StaticBody2D"]
-position = Vector2( -12, 198 )
-shape = SubResource( 45 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Box"]
-position = Vector2( -12, 198 )
-shape = SubResource( 43 )
-
-[node name="Sprite" type="Sprite" parent="Level/Box/CollisionShape2D"]
-texture = ExtResource( 25 )
 
 [connection signal="area_entered" from="Level/Area2D" to="Level/AccessBlock" method="_on_Area2D_area_entered"]
 [connection signal="area_shape_entered" from="Level/Death" to="Players" method="_on_Death_area_shape_entered"]

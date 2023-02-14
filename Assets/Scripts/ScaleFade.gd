@@ -10,7 +10,7 @@ var screensize
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screensize = get_viewport_rect().size
-	self.set_size(screensize)
+	self.set_size(screensize*10)
 	self.set_position(-(screensize/2))
 
 
