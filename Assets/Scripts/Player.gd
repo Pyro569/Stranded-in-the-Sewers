@@ -42,9 +42,9 @@ func _physics_process(delta):
 			velocity.x -= 10
 	elif is_on_floor():
 		if velocity.x < 0:
-			velocity.x += 20
+			velocity.x += 50
 		if velocity.x > 0:
-			velocity.x -= 30
+			velocity.x -= 50
 
 	if UpDown:
 		if is_on_floor():
