@@ -388,7 +388,7 @@ position = Vector2( 1292, -112 )
 shape = SubResource( 41 )
 
 [node name="Finish" type="Node2D" parent="Level"]
-position = Vector2( -1382, -615 )
+position = Vector2( -1382, -616 )
 
 [node name="BlockTrigger" type="Area2D" parent="Level/Finish"]
 position = Vector2( 10584, -112 )
