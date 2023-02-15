@@ -50,6 +50,7 @@ config/icon="res://Assets/Images/Unused/ohio.png"
 
 window/size/width=680
 window/size/height=480
+window/size/fullscreen=true
 
 [gui]
 

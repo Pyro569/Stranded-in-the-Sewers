@@ -26,7 +26,7 @@ func _process(delta):
 			self.get_parent().get_parent().get_parent().get_node("Fadeout/ColorRect").modulate.a8 += 1
 			i += 1
 			yield(get_tree().create_timer(0.01),"timeout")
-		get_tree().change_scene("res://Level3.tscn")
+		get_tree().change_scene("res://Level4.tscn")
 		
 #unc _on
 
