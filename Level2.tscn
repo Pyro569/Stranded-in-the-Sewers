@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://Assets/Images/Level/GreenLowerWater.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Scripts/ScaleFade.gd" type="Script" id=22]
-[ext_resource path="res://Assets/Images/pulley.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=38]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
@@ -256,7 +255,6 @@ volume_db = -21.849
 autoplay = true
 
 [node name="Fadeout" type="Node2D" parent="Camera/Camera2D"]
-position = Vector2( 1884, 240 )
 z_index = 15
 z_as_relative = false
 
@@ -268,6 +266,9 @@ margin_right = 340.0
 margin_bottom = 240.0
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Players" type="KinematicBody2D" parent="."]
 script = ExtResource( 21 )
@@ -323,10 +324,6 @@ shape = SubResource( 37 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
-
-[node name="Pulley" type="Sprite" parent="."]
-position = Vector2( 2450, -900 )
-texture = ExtResource( 23 )
 
 [connection signal="area_shape_entered" from="Level/Death" to="Players" method="_on_Death_area_shape_entered"]
 [connection signal="area_shape_entered" from="Players/Cat/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_entered"]
