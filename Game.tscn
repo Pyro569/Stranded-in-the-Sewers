@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/Images/Player/Cat.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Scripts/BlockTrigger.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=15]
-[ext_resource path="res://Assets/Scripts/Button.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Images/Level/ExitOpen.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=18]
 [ext_resource path="res://Assets/Scripts/accessBlock.gd" type="Script" id=19]
@@ -332,15 +331,6 @@ position = Vector2( -296, 156 )
 stream = ExtResource( 18 )
 volume_db = -21.849
 autoplay = true
-
-[node name="Button" type="Button" parent="Camera/Camera2D/Node2D"]
-margin_left = 256.0
-margin_right = 368.0
-margin_bottom = 106.0
-text = "Quit Game"
-icon = ExtResource( 11 )
-icon_align = 1
-script = ExtResource( 16 )
 
 [node name="Fadeout" type="Node2D" parent="."]
 position = Vector2( -1760, -264 )

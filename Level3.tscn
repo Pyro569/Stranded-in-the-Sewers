@@ -1,14 +1,12 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Scripts/Button.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Images/Player/Cat.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Images/Player/RedSquare.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Images/Level/ExitDoor.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Scripts/Level3Finish.gd" type="Script" id=12]
@@ -341,24 +339,6 @@ shape = SubResource( 6 )
 position = Vector2( -100, 0 )
 current = true
 script = ExtResource( 8 )
-
-[node name="Node2D" type="Node2D" parent="Camera/Camera2D"]
-position = Vector2( -310, -56 )
-z_index = 20
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera/Camera2D/Node2D"]
-position = Vector2( -296, 156 )
-stream = ExtResource( 9 )
-volume_db = -21.849
-autoplay = true
-
-[node name="Button" type="Button" parent="Camera/Camera2D/Node2D"]
-margin_right = 112.0
-margin_bottom = 106.0
-text = "Quit Game"
-icon = ExtResource( 10 )
-icon_align = 1
-script = ExtResource( 3 )
 
 [node name="Node2D2" type="Node2D" parent="Camera/Camera2D"]
 z_index = 30
