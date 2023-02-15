@@ -1,13 +1,11 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Scripts/Button.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/Level2Finish.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Scripts/Cat.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Images/Level/toxicwater.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Images/Player/RedSquare.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/Level/HopefullyTileableWater.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=11]
@@ -270,14 +268,6 @@ position = Vector2( -296, 156 )
 stream = ExtResource( 16 )
 volume_db = -21.849
 autoplay = true
-
-[node name="Button" type="Button" parent="Camera/Camera2D/Node2D"]
-margin_right = 112.0
-margin_bottom = 106.0
-text = "Quit Game"
-icon = ExtResource( 8 )
-icon_align = 1
-script = ExtResource( 3 )
 
 [node name="Players" type="KinematicBody2D" parent="."]
 script = ExtResource( 21 )

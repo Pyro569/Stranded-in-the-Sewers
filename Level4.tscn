@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://Assets/Images/Level/toxicwater.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Images/Level/ExitOpen.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=17]
-[ext_resource path="res://Assets/Scripts/Button.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Scripts/accessBlock.gd" type="Script" id=19]
 [ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=21]
@@ -357,14 +356,6 @@ position = Vector2( -296, 156 )
 stream = ExtResource( 17 )
 volume_db = -21.849
 autoplay = true
-
-[node name="Button" type="Button" parent="Camera/Camera2D/Node2D"]
-margin_right = 112.0
-margin_bottom = 106.0
-text = "Quit Game"
-icon = ExtResource( 4 )
-icon_align = 1
-script = ExtResource( 18 )
 
 [node name="Node2D2" type="Node2D" parent="Camera/Camera2D"]
 z_index = 30
