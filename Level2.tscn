@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/Images/Level/GreenLowerWater.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Scripts/ScaleFade.gd" type="Script" id=22]
+[ext_resource path="res://Assets/Images/pulley.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=38]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
@@ -183,6 +184,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 1100, 100 )
 
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 50, 12 )
+
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ ExtResource( 10 ) ],
@@ -237,6 +241,19 @@ frames = SubResource( 31 )
 position = Vector2( 1938, 173 )
 shape = SubResource( 40 )
 
+[node name="Node2D" type="KinematicBody2D" parent="Level"]
+position = Vector2( 2588, -217 )
+z_as_relative = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D"]
+z_as_relative = false
+shape = SubResource( 41 )
+
+[node name="Sprite" type="Sprite" parent="Level/Node2D/CollisionShape2D"]
+position = Vector2( 0, -650 )
+z_as_relative = false
+texture = ExtResource( 23 )
+
 [node name="Camera" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
@@ -276,7 +293,7 @@ script = ExtResource( 21 )
 position = Vector2( -334, 75 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Players/Cat"]
-z_index = 10
+z_as_relative = false
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Players/Cat/KinematicBody2D"]
@@ -301,7 +318,7 @@ shape = SubResource( 37 )
 position = Vector2( -250, 75 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Players/Dog"]
-z_index = 10
+z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Players/Dog/KinematicBody2D"]
