@@ -360,18 +360,6 @@ icon = ExtResource( 10 )
 icon_align = 1
 script = ExtResource( 3 )
 
-[node name="Node2D2" type="Node2D" parent="Camera/Camera2D"]
-z_index = 30
-
-[node name="ColorRect" type="ColorRect" parent="Camera/Camera2D/Node2D2"]
-visible = false
-margin_left = -340.0
-margin_top = -240.0
-margin_right = 340.0
-margin_bottom = 240.0
-color = Color( 0, 0, 0, 1 )
-script = ExtResource( 24 )
-
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( -138, -73 )
 
@@ -428,6 +416,19 @@ frames = SubResource( 26 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Death"]
 position = Vector2( 4538, 223 )
 shape = SubResource( 42 )
+
+[node name="Fadeout" type="Node2D" parent="."]
+position = Vector2( -100, 0 )
+z_index = 30
+
+[node name="ColorRect" type="ColorRect" parent="Fadeout"]
+visible = false
+margin_left = -340.0
+margin_top = -240.0
+margin_right = 340.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 24 )
 
 [connection signal="area_shape_entered" from="Players/Cat/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_entered"]
 [connection signal="area_shape_exited" from="Players/Cat/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_exited"]
