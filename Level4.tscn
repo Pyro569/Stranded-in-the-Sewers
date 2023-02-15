@@ -381,6 +381,9 @@ stream = ExtResource( 14 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 41 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players"]
+stream = ExtResource( 17 )
+
 [node name="Camera" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
