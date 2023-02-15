@@ -20,7 +20,6 @@
 [ext_resource path="res://Assets/Scripts/accessBlock.gd" type="Script" id=19]
 [ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=21]
-[ext_resource path="res://Assets/Scripts/Level2Finish.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Images/Level/GreenLowerWater.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=39]
@@ -270,6 +269,48 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 65, 16.5 )
 
+[sub_resource type="GDScript" id=49]
+script/source = "extends Node
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+var finishedCount = 0
+var finishing = false
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.get_parent().get_parent().get_parent().get_node(\"Fadeout/ColorRect\").visible = true
+	self.get_parent().get_parent().get_parent().get_node(\"Fadeout/ColorRect\").modulate.a8 = 0
+
+func _process(delta):
+	if finishing:
+		self.get_parent().get_parent().get_parent().get_node(\"Fadeout\").position.x = self.get_parent().get_parent().get_parent().get_node(\"Camera/Camera2D\").position.x
+		self.get_parent().get_parent().get_parent().get_node(\"Fadeout\").position.y = self.get_parent().get_parent().get_parent().get_node(\"Camera/Camera2D\").position.y
+	if finishedCount >= 2:
+		finishing = true
+		finishedCount = 0
+		var i = 0
+		self.get_node(\"Triple/AnimatedSprite\").play(\"default\")
+		while i != 255:
+			self.get_parent().get_parent().get_parent().get_node(\"Fadeout/ColorRect\").modulate.a8 += 1
+			i += 1
+			yield(get_tree().create_timer(0.01),\"timeout\")
+		get_tree().change_scene(\"res://Level3.tscn\")
+		
+#unc _on
+
+func _on_PlayerCollision_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if(area.name == \"BlockTrigger\"):
+		finishedCount += 1
+
+func _on_PlayerCollision_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
+	if(area.name == \"BlockTrigger\"):
+		finishedCount -= 1
+"
+
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 100, 100 )
 
@@ -406,7 +447,7 @@ position = Vector2( -7286, -119 )
 
 [node name="BlockTrigger" type="Area2D" parent="Level/Finish"]
 position = Vector2( 10584, -112 )
-script = ExtResource( 22 )
+script = SubResource( 49 )
 
 [node name="Triple" type="CollisionShape2D" parent="Level/Finish/BlockTrigger"]
 position = Vector2( -2764, 201 )
