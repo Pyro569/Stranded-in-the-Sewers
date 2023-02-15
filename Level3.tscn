@@ -336,6 +336,7 @@ shape = SubResource( 6 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players"]
 stream = ExtResource( 9 )
+autoplay = true
 
 [node name="Camera" type="Node" parent="."]
 
