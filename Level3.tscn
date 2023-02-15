@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Images/Player/RedSquare.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Images/Level/ExitDoor.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Images/Level/Ground.png" type="Texture" id=13]
@@ -332,6 +333,10 @@ stream = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Dog/KinematicBody2D/PlayerCollision"]
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 6 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Players"]
+stream = ExtResource( 9 )
+autoplay = true
 
 [node name="Camera" type="Node" parent="."]
 
