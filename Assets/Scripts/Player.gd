@@ -36,15 +36,15 @@ func _process(delta):
 func _physics_process(delta):
 	if RightDown:
 		if velocity.x < maxSpeed:
-			velocity.x += 25
+			velocity.x += 10
 	elif LeftDown:
 		if velocity.x > -maxSpeed:
-			velocity.x -= 25
+			velocity.x -= 10
 	elif is_on_floor():
 		if velocity.x < 0:
-			velocity.x += 50
+			velocity.x += 20
 		if velocity.x > 0:
-			velocity.x -= 50
+			velocity.x -= 30
 
 	if UpDown:
 		if is_on_floor():
