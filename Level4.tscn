@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Images/Level/toxicwater.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Images/Level/ExitOpen.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sounds/disturbingsynthwaves.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Scripts/BlockTrigger.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Scripts/accessBlock.gd" type="Script" id=19]
 [ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=21]
@@ -269,48 +270,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 65, 16.5 )
 
-[sub_resource type="GDScript" id=49]
-script/source = "extends Node
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-var finishedCount = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	self.get_parent().get_parent().get_parent().get_node(\"Camera/Camera2D/Fadeout/ColorRect\").visible = true
-	self.get_parent().get_parent().get_parent().get_node(\"Camera/Camera2D/Fadeout/ColorRect\").modulate.a8 = 0
-
-func _process(delta):
-	if finishedCount >= 2:
-		finishedCount = 0
-		var i = 0
-		self.get_node(\"Triple/AnimatedSprite\").play(\"default\")
-		while i != 255:
-			print(\"test\")
-			self.get_parent().get_parent().get_parent().get_node(\"Camera/Camera2D/Fadeout/ColorRect\").modulate.a8 += 1
-			i += 1
-			yield(get_tree().create_timer(0.01),\"timeout\")
-		if get_tree().get_current_scene().get_name() == \"Game\":
-			get_tree().change_scene(\"res://Level2.tscn\")
-		elif get_tree().get_current_scene().get_name() == \"Level2\":
-			get_tree().change_scene(\"res://Level3.tscn\") 
-		elif get_tree().get_current_scene().get_name() == \"Level3\":
-			get_tree().change_scene(\"res://Level4.tscn\") 
-#unc _on
-
-func _on_PlayerCollision_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if(area.name == \"BlockTrigger\"):
-		finishedCount += 1
-
-func _on_PlayerCollision_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
-	if(area.name == \"BlockTrigger\"):
-		finishedCount -= 1
-"
-
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 100, 100 )
 
@@ -451,7 +410,7 @@ position = Vector2( -7286, -119 )
 
 [node name="BlockTrigger" type="Area2D" parent="Level/Finish"]
 position = Vector2( 10584, -112 )
-script = SubResource( 49 )
+script = ExtResource( 18 )
 
 [node name="Triple" type="CollisionShape2D" parent="Level/Finish/BlockTrigger"]
 position = Vector2( -2764, 201 )
@@ -468,4 +427,8 @@ frames = SubResource( 47 )
 position = Vector2( 4538, 223 )
 shape = SubResource( 48 )
 
+[connection signal="area_shape_entered" from="Players/Cat/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_entered"]
+[connection signal="area_shape_exited" from="Players/Cat/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_exited"]
+[connection signal="area_shape_entered" from="Players/Dog/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_entered"]
+[connection signal="area_shape_exited" from="Players/Dog/KinematicBody2D/PlayerCollision" to="Level/Finish/BlockTrigger" method="_on_PlayerCollision_area_shape_exited"]
 [connection signal="area_entered" from="Level/Area2D" to="Level/AccessBlock" method="_on_Area2D_area_entered"]
