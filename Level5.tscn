@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Images/Level/MossyBlock.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Level/HopefullyTileableWater.png" type="Texture" id=2]
@@ -18,7 +18,8 @@
 [ext_resource path="res://Assets/Images/Player/Dog.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Images/Player/Cat.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=18]
-[ext_resource path="res://Assets/Scripts/ScaleFade.gd" type="Script" id=19]
+[ext_resource path="res://Whopper.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Scripts/ScaleFade.gd" type="Script" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
@@ -178,18 +179,13 @@ script/source = "extends Node
 
 
 var finishedCount = 0
-var finishing = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.get_parent().get_parent().get_parent().get_node(\"Fadeout/ColorRect\").visible = true
 	self.get_parent().get_parent().get_parent().get_node(\"Fadeout/ColorRect\").modulate.a8 = 0
 
 func _process(delta):
-	if finishing:
-		self.get_parent().get_parent().get_parent().get_node(\"Fadeout\").position.x = self.get_parent().get_parent().get_parent().get_node(\"Camera/Camera2D\").position.x
-		self.get_parent().get_parent().get_parent().get_node(\"Fadeout\").position.y = self.get_parent().get_parent().get_parent().get_node(\"Camera/Camera2D\").position.y
 	if finishedCount >= 2:
-		finishing = true
 		finishedCount = 0
 		var i = 0
 		self.get_node(\"Triple/AnimatedSprite\").play(\"default\")
@@ -268,6 +264,25 @@ shape = SubResource( 5 )
 z_index = -1
 frames = SubResource( 6 )
 
+[node name="Label" type="Label" parent="Level/Level"]
+margin_left = -2004.0
+margin_top = -1400.0
+margin_right = -1700.0
+margin_bottom = -1376.0
+text = "What is impossible and rhymes with \"Copper\"?
+Hit enter to submit"
+align = 1
+valign = 1
+
+[node name="Whopper" type="LineEdit" parent="Level/Level"]
+margin_left = -1700.0
+margin_top = -1400.0
+margin_right = -1500.0
+margin_bottom = -1369.0
+text = "Text Here"
+align = 1
+script = ExtResource( 19 )
+
 [node name="Fadeout" type="Node2D" parent="Level"]
 position = Vector2( -100, 0 )
 z_index = 30
@@ -279,7 +294,7 @@ margin_top = -240.0
 margin_right = 340.0
 margin_bottom = 240.0
 color = Color( 0, 0, 0, 1 )
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Players" type="KinematicBody2D" parent="."]
 position = Vector2( 227, 270 )
