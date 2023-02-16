@@ -18,7 +18,7 @@ func _process(delta):
 	if get_tree().get_current_scene().get_name() == "Level5":
 		input = get_parent().get_parent().get_node("Level/Whopper").text
 		print(finishedCount, input)
-	if finishedCount >= 2 and input == "whopper":
+	if finishedCount >= 2 and input.to_lower() == "whopper":
 		if get_tree().get_current_scene().get_name() == "Level5":
 			get_tree().change_scene("res://Win.tscn")
 		else:
