@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Assets/Scripts/PlayerGroup.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/Dog.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/Scripts/accessBlock.gd" type="Script" id=19]
 [ext_resource path="res://Assets/Scripts/Area2D.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=21]
+[ext_resource path="res://Assets/Scripts/ScaleFade.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Images/Level/GreenLowerWater.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=39]
@@ -371,6 +372,7 @@ margin_top = -240.0
 margin_right = 340.0
 margin_bottom = 240.0
 color = Color( 0, 0, 0, 1 )
+script = ExtResource( 22 )
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( -138, -73 )
