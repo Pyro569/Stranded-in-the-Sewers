@@ -268,5 +268,6 @@ text = "Stranded In The Sewers"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 405, 235 )
+current = true
 
 [connection signal="pressed" from="Players/VBoxContainer/StartButton" to="Players/VBoxContainer/StartButton" method="_on_StartButton_pressed"]

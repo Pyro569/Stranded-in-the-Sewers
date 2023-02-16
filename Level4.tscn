@@ -38,10 +38,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 25, 25 )
+extents = Vector2( 24, 24 )
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 48, 48 )
+extents = Vector2( 50, 50 )
 
 [sub_resource type="ConvexPolygonShape2D" id=23]
 points = PoolVector2Array( 192, 192, 0, 192, 0, 0, 192, 0 )
