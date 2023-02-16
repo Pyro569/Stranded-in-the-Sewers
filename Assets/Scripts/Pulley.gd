@@ -17,11 +17,11 @@ func _ready():
 var pushed = false
 
 func _process(delta):
-	print(position)
-	if position.y > -218 and pushed:
-		position.y -= 1
-	if position.y < -1017 and not pushed:
+	print(position, pushed)
+	if position.y < -218 and pushed:
 		position.y += 1
+	if position.y > -1017 and not pushed:
+		position.y -= 1
 
 func _on_Area2D_area_entered(area):
 	pushed = true
