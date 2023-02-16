@@ -13,7 +13,7 @@ func _ready():
 	self.set_position(-(screensize/2))
 	
 func _process(delta):
-	self.set_size(screensize*self.get_parent().get_parent().zoom)
+	self.set_size(screensize*100)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
