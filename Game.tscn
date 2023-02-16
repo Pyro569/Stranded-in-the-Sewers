@@ -319,6 +319,7 @@ shape = SubResource( 35 )
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 position = Vector2( -1760, -264 )
+current = true
 script = ExtResource( 15 )
 
 [node name="Node2D" type="Node2D" parent="Camera/Camera2D"]
