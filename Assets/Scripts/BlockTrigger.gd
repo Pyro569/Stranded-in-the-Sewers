@@ -28,6 +28,8 @@ func _process(delta):
 			get_tree().change_scene("res://Level3.tscn") 
 		elif get_tree().get_current_scene().get_name() == "Level3":
 			get_tree().change_scene("res://Level4.tscn") 
+		elif get_tree().get_current_scene().get_name() == "Level4":
+			get_tree().change_scene("res://Level5.tscn") 
 #unc _on
 
 func _on_PlayerCollision_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
